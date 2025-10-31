@@ -1,0 +1,81 @@
+.table-shell {
+  margin: -20px;
+  padding: 20px;
+}
+
+.table-shell::-webkit-scrollbar {
+  display: none;
+}
+
+.table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--col-bg-pri-light);
+  border-radius: var(--radius);
+  box-shadow: var(--sdw-pri);
+  overflow:  hidden;
+}
+
+.table svg {
+  width: 1em;
+  height: 1em;
+}
+
+.table button {
+  display: inline-block;
+  padding: 2px 7px;
+  color: var(--col-bg-pri-light);
+  background: var(--col-bg-sec-light);
+  border: none;
+  box-shadow: var(--sdw-sec);
+  transition: all 0.5s ease;
+  cursor: pointer;  
+  margin-top: auto;
+  align-self: flex-start;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.table button:hover{ 
+  transform: translateY(2px); 
+  background: var(--col-bg-pri-dark);
+  box-shadow: var(--sdw-pri);
+}
+
+.table th, .table td{
+  width: auto;
+  padding: 14px 10px;
+  text-align: center;
+  max-width: 200px;
+  border-bottom: 1px solid var(--table-border);
+  font-size: 14px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table th{
+  color: var(--col-front-sec-light);
+  background: #fafafa;
+  font-weight: 700;
+}
+
+/* .table th: first-child{
+  text-align: left;
+}
+.table td: first-child{
+  text-align: left;
+} */
+.chip{
+  display: inline-block;
+  padding: 2px 8px;
+  color: #0f172a;
+  background: var(--chip);
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+}

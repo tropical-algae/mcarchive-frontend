@@ -1,0 +1,86 @@
+
+.modal{
+  display: grid;
+  position: fixed;
+  z-index: 60; 
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease; 
+  inset: 0; 
+  place-items: center;
+  opacity: 0;
+}
+
+.modal[data-open="true"]{ 
+  opacity: 1; 
+  visibility: visible; 
+}
+
+.modal-bg{
+  position: absolute; 
+  inset: 0;
+  background: rgb(0 0 0 / 55%);
+
+  /* backdrop-filter: blur(3px); */
+}
+
+.modal-panel{
+  position: relative;
+  width: min(560px, calc(100% - 40px));
+  padding: 22px;
+  color: var(--col-front-pri-light);
+  background: var(--col-bg-pri-light);
+  box-shadow: var(--sdw-pri);
+  transition: transform .25s ease;
+  border-radius: 18px;
+  transform: translateY(8px) scale(.98);
+}
+
+.modal[data-open="true"] .modal-panel{ 
+  transform: translateY(0) scale(1); 
+}
+
+.modal-tip{
+  margin: 4px 0 14px;
+  font-size: 18px; 
+  font-weight: 800;
+}
+
+.modal-interact{
+  display: flex; 
+  gap: 10px; 
+  align-items: center;
+}
+
+.modal-interact-input{
+  height: 42px;
+  padding: 0 12px;
+  background: var(--col-bg-pri-light);
+  font: inherit;
+  border: 1px solid var(--table-border);
+  transition: border-color .2s ease, box-shadow .2s ease;
+  flex: 1;
+  border-radius: 12px;
+  outline: none;
+}
+
+.modal-interact-input:focus{
+  border-color: var(--col-bg-sec-light);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--col-bg-sec-light) 25%, transparent);
+}
+
+.modal-interact-btn{
+  height: 42px; 
+  padding: 0 16px;
+  color: var(--col-bg);
+  background: var(--col-bg-sec-light);
+  border: none;
+  box-shadow: var(--sdw-sec);
+  transition: transform .04s ease, opacity .2s ease; 
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-interact-btn:active{ 
+  transform: translateY(1px); 
+}
