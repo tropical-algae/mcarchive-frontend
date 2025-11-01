@@ -1,6 +1,6 @@
 
 .modal{
-  display: grid;
+  display: block;
   position: fixed;
   z-index: 60; 
   visibility: hidden;
@@ -16,7 +16,7 @@
 }
 
 .modal-bg{
-  position: absolute; 
+  position: fixed; 
   inset: 0;
   background: rgb(0 0 0 / 55%);
 
@@ -24,7 +24,9 @@
 }
 
 .modal-panel{
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: min(560px, calc(100% - 40px));
   padding: 22px;
   color: var(--col-front-pri-light);
@@ -32,11 +34,12 @@
   box-shadow: var(--sdw-pri);
   transition: transform .25s ease;
   border-radius: 18px;
-  transform: translateY(8px) scale(.98);
+  transform: translate(-50%, -50%); 
 }
 
 .modal[data-open="true"] .modal-panel{ 
-  transform: translateY(0) scale(1); 
+  transform: translate(-50%, -65%); 
+
 }
 
 .modal-tip{
@@ -52,13 +55,14 @@
 }
 
 .modal-interact-input{
+  flex: 1 1 auto;
+  min-width: 0; 
   height: 42px;
   padding: 0 12px;
   background: var(--col-bg-pri-light);
   font: inherit;
   border: 1px solid var(--table-border);
   transition: border-color .2s ease, box-shadow .2s ease;
-  flex: 1;
   border-radius: 12px;
   outline: none;
 }
@@ -69,6 +73,8 @@
 }
 
 .modal-interact-btn{
+  flex: 0 0 auto;
+  white-space: nowrap; 
   height: 42px; 
   padding: 0 16px;
   color: var(--col-bg);

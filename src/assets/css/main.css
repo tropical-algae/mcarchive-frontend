@@ -18,7 +18,7 @@ header h1{
 
 header p{
   /* background-color: blue; */
-  width: 60%;
+  width: calc(100% - 80px);
   margin: 0 auto;
   color: var(--col-front-sec-light);
   font-size: 15px;
